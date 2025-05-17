@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BlueSentinel Alerts Dashboard</title>
+    <title>BlueSentinel Dashboard</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f9f9f9;
-            padding: 20px;
-        }
+        body { font-family: Arial; background: #f9f9f9; padding: 20px; }
         .alert-box {
             background: white;
             border-left: 6px solid #ccc;
@@ -18,12 +14,55 @@
         .HIGH { border-left-color: red; }
         .MEDIUM { border-left-color: orange; }
         .LOW { border-left-color: green; }
-        h2 { margin-top: 0; }
-        .summary { font-style: italic; color: #555; }
+
+        .filters {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons a {
+            padding: 8px 12px;
+            margin-right: 10px;
+            background: #eee;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .filter-buttons a.active { background: #333; color: white; }
+
+        .download-btn {
+            padding: 8px 12px;
+            background: #2d89ef;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
     </style>
+
+    <script>
+        // Auto-refresh the dashboard every 30 seconds
+        setInterval(() => {
+            window.location.reload();
+        }, 30000);
+    </script>
 </head>
 <body>
     <h1>🛡️ BlueSentinel Alert Dashboard</h1>
+
+    <div class="filters">
+        <div class="filter-buttons">
+            <a href="/" class="{{ 'active' if current_filter == 'all' else '' }}">Show All</a>
+            <a href="/?severity=high" class="{{ 'active' if current_filter == 'high' else '' }}">🔴 High</a>
+            <a href="/?severity=medium" class="{{ 'active' if current_filter == 'medium' else '' }}">🟠 Medium</a>
+            <a href="/?severity=low" class="{{ 'active' if current_filter == 'low' else '' }}">🟢 Low</a>
+        </div>
+        <a href="/api/alerts" class="download-btn" download>⬇️ Download JSON</a>
+    </div>
+
     {% for alert in alerts %}
         {% set level = "LOW" %}
         {% if "[HIGH" in alert %}{% set level = "HIGH" %}
