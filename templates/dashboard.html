@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BlueSentinel Alerts Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            padding: 20px;
+        }
+        .alert-box {
+            background: white;
+            border-left: 6px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        .HIGH { border-left-color: red; }
+        .MEDIUM { border-left-color: orange; }
+        .LOW { border-left-color: green; }
+        h2 { margin-top: 0; }
+        .summary { font-style: italic; color: #555; }
+    </style>
+</head>
+<body>
+    <h1>🛡️ BlueSentinel Alert Dashboard</h1>
+    {% for alert in alerts %}
+        {% set level = "LOW" %}
+        {% if "[HIGH" in alert %}{% set level = "HIGH" %}
+        {% elif "[MEDIUM" in alert %}{% set level = "MEDIUM" %}
+        {% endif %}
+        <div class="alert-box {{ level }}">
+            <pre>{{ alert }}</pre>
+        </div>
+    {% endfor %}
+</body>
+</html>

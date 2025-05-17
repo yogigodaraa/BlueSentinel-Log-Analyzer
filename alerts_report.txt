@@ -1,0 +1,808 @@
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 220-135-151-1.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=220-135-151-1.hinet-ip.hinet.net  user=root
+> Time: 2025-06-15 02:04:59
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005
+> Time: 2025-06-17 20:55:06
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005
+> Time: 2025-06-17 20:55:06
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005
+> Time: 2025-06-17 20:55:06
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005
+> Time: 2025-06-17 20:55:06
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005
+> Time: 2025-06-17 20:55:06
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:07 2005
+> Time: 2025-06-17 20:55:07
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:07 2005
+> Time: 2025-06-17 20:55:07
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:10 2005
+> Time: 2025-06-18 02:08:10
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:10 2005
+> Time: 2025-06-18 02:08:10
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:10 2005
+> Time: 2025-06-18 02:08:10
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:10 2005
+> Time: 2025-06-18 02:08:10
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:10 2005
+> Time: 2025-06-18 02:08:10
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:10 2005
+> Time: 2025-06-18 02:08:10
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:10 2005
+> Time: 2025-06-18 02:08:10
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:11 2005
+> Time: 2025-06-18 02:08:11
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:11 2005
+> Time: 2025-06-18 02:08:11
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:11 2005
+> Time: 2025-06-18 02:08:11
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:11 2005
+> Time: 2025-06-18 02:08:11
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:11 2005
+> Time: 2025-06-18 02:08:11
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:12 2005
+> Time: 2025-06-18 02:08:12
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:12 2005
+> Time: 2025-06-18 02:08:12
+
+[ALERT] [LOW Severity]
+> Incoming connection from 82.252.162.81
+> Message: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Sat Jun 18 02:08:12 2005
+> Time: 2025-06-18 02:08:12
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Received SNMP packet(s) from 67.170.148.126
+> Time: 2025-06-20 04:44:39
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from troi.bluesky-technologies.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=troi.bluesky-technologies.com  user=root
+> Time: 2025-06-27 08:05:37
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from troi.bluesky-technologies.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=troi.bluesky-technologies.com  user=root
+> Time: 2025-06-27 08:05:39
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from troi.bluesky-technologies.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=troi.bluesky-technologies.com  user=root
+> Time: 2025-06-27 08:05:39
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from troi.bluesky-technologies.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=troi.bluesky-technologies.com  user=root
+> Time: 2025-06-27 08:05:39
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from troi.bluesky-technologies.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=troi.bluesky-technologies.com  user=root
+> Time: 2025-06-27 08:05:39
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:19
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:19
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:19
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:19
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:19
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:19
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:19
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:20
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:20
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from csnsu.nsuok.edu
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=csnsu.nsuok.edu  user=root
+> Time: 2025-06-29 10:08:20
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from biblioteka.wsi.edu.pl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+> Time: 2025-06-30 12:48:38
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from biblioteka.wsi.edu.pl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+> Time: 2025-06-30 12:48:41
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from biblioteka.wsi.edu.pl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+> Time: 2025-06-30 12:48:41
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from biblioteka.wsi.edu.pl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+> Time: 2025-06-30 12:48:41
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from biblioteka.wsi.edu.pl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+> Time: 2025-06-30 12:48:41
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from biblioteka.wsi.edu.pl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+> Time: 2025-06-30 12:48:41
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from biblioteka.wsi.edu.pl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+> Time: 2025-06-30 12:48:41
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from biblioteka.wsi.edu.pl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=biblioteka.wsi.edu.pl
+> Time: 2025-06-30 12:48:41
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:04
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Authentication failed from 163.27.187.39 (163.27.187.39): Software caused connection abort
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [MEDIUM Severity]
+> Kerberos authentication issue from Unknown
+> Message: Kerberos authentication failed
+> Time: 2025-06-30 20:53:06
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:33
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:33
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:33
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:43
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:43
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:43
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:43
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:43
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:43
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from zummit.com
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=zummit.com
+> Time: 2025-07-02 04:15:43
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Incoming connection from 203.101.45.59
+> Message: connection from 203.101.45.59 (dsl-Chn-static-059.45.101.203.touchtelindia.net) at Sun Jul  3 10:05:25 2005
+> Time: 2025-07-03 10:05:25
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: *** info [mice.c(1766)]:
+> Time: 2025-07-07 08:06:12
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from Unknown
+> Message: authentication failure; logname= uid=0 euid=0 tty=:0 ruser= rhost=
+> Time: 2025-07-11 11:33:13
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:48
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:48
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:48
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:48
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:48
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:48
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:49
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:49
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:50
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from c51471f2c.cable.wanadoo.nl
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=c51471f2c.cable.wanadoo.nl  user=root
+> Time: 2025-07-15 01:03:50
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 61-220-159-99.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-220-159-99.hinet-ip.hinet.net  user=root
+> Time: 2025-07-17 10:45:07
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 61-220-159-99.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-220-159-99.hinet-ip.hinet.net  user=root
+> Time: 2025-07-17 10:45:07
+
+[ALERT] [HIGH Severity]
+> Multiple failed login attempts from 61-220-159-99.hinet-ip.hinet.net
+> Message: authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=61-220-159-99.hinet-ip.hinet.net  user=root
+> Time: 2025-07-17 10:45:07
+
+[ALERT] [HIGH Severity]
+> Anonymous FTP login attempt from 84.102.20.2
+> Message: ANONYMOUS FTP LOGIN FROM 84.102.20.2,  (anonymous)
+> Time: 2025-07-24 02:38:23
+
+[ALERT] [HIGH Severity]
+> Anonymous FTP login attempt from 84.102.20.2
+> Message: ANONYMOUS FTP LOGIN FROM 84.102.20.2,  (anonymous)
+> Time: 2025-07-24 02:38:23
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: getpeername (ftpd): Transport endpoint is not connected
+> Time: 2025-07-25 23:23:13
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: getpeername (ftpd): Transport endpoint is not connected
+> Time: 2025-07-25 23:23:13
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: warning: can't get client address: Connection reset by peer
+> Time: 2025-07-25 23:23:13
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: getpeername (ftpd): Transport endpoint is not connected
+> Time: 2025-07-25 23:23:13
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: warning: can't get client address: Connection reset by peer
+> Time: 2025-07-25 23:23:13
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: getpeername (ftpd): Transport endpoint is not connected
+> Time: 2025-07-25 23:23:13
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: Version 1.0.6 Starting
+> Time: 2025-07-27 14:41:57
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: HCI daemon ver 2.4 started
+> Time: 2025-07-27 14:41:59
+
+[ALERT] [LOW Severity]
+> Suspicious activity detected.
+> Message: sdpd v1.5 started
+> Time: 2025-07-27 14:41:59
+
+
+[SUMMARY] 🔍 29 anomalies were flagged from IP: Unknown — review for potential brute-force or scanning activity.
+
