@@ -1,0 +1,2 @@
+May 17 10:42:31 myhost sshd[1945]: Failed password for invalid user admin from 192.168.1.10 port 4242 ssh2
+May 17 10:42:35 myhost sshd[1945]: Accepted password for yogi from 192.168.1.10 port 4243 ssh2
