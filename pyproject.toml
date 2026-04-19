@@ -1,0 +1,104 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bluesentinel"
+version = "2.0.0"
+description = "Advanced log anomaly detection & UBA for SOC teams — Drain3 parsing + DeepLog + LogBERT + MITRE ATT&CK + Sigma rules"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Yogi Godara" }]
+keywords = ["siem", "uba", "log-anomaly", "mitre-attack", "sigma", "deeplog", "logbert", "security"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security",
+  "Topic :: System :: Monitoring",
+]
+
+dependencies = [
+  # Core
+  "numpy>=1.26",
+  "pandas>=2.1",
+  "pydantic>=2.5",
+  "loguru>=0.7",
+
+  # Parsing
+  "drain3>=0.9.11",
+
+  # Detectors (classical)
+  "scikit-learn>=1.3",
+  "joblib>=1.3",
+
+  # Detectors (deep learning — optional but shipped by default)
+  "torch>=2.0",
+  "transformers>=4.36",
+
+  # Rules
+  "pysigma>=0.11",
+  "pysigma-backend-elasticsearch>=1.0",
+  "PyYAML>=6",
+
+  # API
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+
+  # Enrichment
+  "mitreattack-python>=3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4",
+  "pytest-cov>=4.1",
+  "ruff>=0.3",
+  "mypy>=1.7",
+  "types-PyYAML>=6",
+]
+eval = [
+  "matplotlib>=3.8",
+  "seaborn>=0.13",
+  "requests>=2.31",
+]
+llm = [
+  "openai>=1.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer"
+Repository = "https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer"
+Issues = "https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer/issues"
+
+[project.scripts]
+bluesentinel = "bluesentinel.cli.__main__:main"
+bluesentinel-api = "bluesentinel.api.app:run"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+bluesentinel = ["rules/builtin/*.yml", "enrichment/data/*.json"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+
+[tool.mypy]
+python_version = "3.10"
+strict = false
+ignore_missing_imports = true
