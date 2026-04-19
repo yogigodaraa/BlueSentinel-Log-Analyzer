@@ -1,0 +1,34 @@
+title: SSH brute-force — many failed passwords from one host
+id: bs-001-ssh-brute-force
+status: stable
+description: |
+  Repeated failed SSH authentication attempts from the same source IP
+  in a short window — classic online password guessing. Common for
+  exposed SSH on the public internet; should trigger account lockout
+  and IP blocklist enrichment.
+author: Yogi Godara
+references:
+  - https://attack.mitre.org/techniques/T1110/001/
+logsource:
+  product: linux
+  service: auth
+  category: authentication
+detection:
+  selection:
+    process_name: sshd
+    message|contains:
+      - "Failed password"
+      - "authentication failure"
+      - "Invalid user"
+  condition: selection
+fields:
+  - source_ip
+  - user
+  - host
+falsepositives:
+  - Mistyped passwords by legitimate users
+level: high
+tags:
+  - attack.credential-access
+  - attack.t1110
+  - attack.t1110.001

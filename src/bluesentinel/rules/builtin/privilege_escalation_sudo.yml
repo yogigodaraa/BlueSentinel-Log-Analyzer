@@ -1,0 +1,36 @@
+title: Unauthorised sudo attempt
+id: bs-002-sudo-denied
+status: stable
+description: |
+  A user not in the sudoers file attempted to use sudo, or an authorized
+  user issued a sudo command with an incorrect password. Both are
+  indicators that credentials have been obtained by a user attempting
+  to escalate privileges.
+author: Yogi Godara
+references:
+  - https://attack.mitre.org/techniques/T1548/003/
+logsource:
+  product: linux
+  service: auth
+detection:
+  selection_sudoers:
+    message|contains:
+      - "user NOT in sudoers"
+      - "is not in the sudoers file"
+      - "incorrect password attempts"
+  selection_escalate:
+    process_name: sudo
+    message|contains:
+      - "authentication failure"
+  condition: 1 of selection_*
+fields:
+  - user
+  - source_ip
+  - host
+falsepositives:
+  - Admins testing sudoers misconfigurations
+level: high
+tags:
+  - attack.privilege-escalation
+  - attack.t1548.003
+  - attack.t1068

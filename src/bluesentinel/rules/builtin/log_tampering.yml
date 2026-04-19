@@ -1,0 +1,31 @@
+title: Auth log tampering
+id: bs-004-log-tampering
+status: stable
+description: |
+  Attempt to delete, truncate, or shred core security log files.
+  Strong indicator of active cleanup post-compromise.
+author: Yogi Godara
+references:
+  - https://attack.mitre.org/techniques/T1070/002/
+logsource:
+  product: linux
+detection:
+  selection:
+    message|contains:
+      - "rm /var/log/auth.log"
+      - "rm -f /var/log/auth"
+      - "rm /var/log/secure"
+      - "truncate -s 0 /var/log/"
+      - "shred /var/log/"
+      - "wtmp"
+      - "btmp"
+  condition: selection
+fields:
+  - user
+  - source_ip
+falsepositives:
+  - Planned log rotation testing by sysadmins
+level: critical
+tags:
+  - attack.defense-evasion
+  - attack.t1070.002

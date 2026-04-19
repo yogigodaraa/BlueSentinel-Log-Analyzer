@@ -1,0 +1,31 @@
+title: Host firewall disabled
+id: bs-005-firewall-disabled
+status: stable
+description: |
+  The local firewall (iptables / ufw / firewalld) was flushed or
+  stopped. Real-world adversaries do this to allow inbound C2 or
+  lateral movement after gaining initial foothold.
+author: Yogi Godara
+references:
+  - https://attack.mitre.org/techniques/T1562/004/
+logsource:
+  product: linux
+detection:
+  selection:
+    message|contains:
+      - "iptables -F"
+      - "iptables --flush"
+      - "ufw disable"
+      - "systemctl stop firewalld"
+      - "systemctl stop ufw"
+      - "service iptables stop"
+  condition: selection
+fields:
+  - user
+  - host
+falsepositives:
+  - Scheduled firewall ruleset reloads during maintenance windows
+level: critical
+tags:
+  - attack.defense-evasion
+  - attack.t1562.004
