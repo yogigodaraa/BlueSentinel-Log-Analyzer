@@ -1,0 +1,30 @@
+title: Local account created
+id: bs-003-user-created
+status: stable
+description: |
+  A new local user account was created. Legitimate admin activity for
+  onboarding, but a classic persistence technique when it happens
+  outside change windows or by unexpected principals.
+author: Yogi Godara
+references:
+  - https://attack.mitre.org/techniques/T1136/001/
+logsource:
+  product: linux
+  service: auth
+detection:
+  selection:
+    message|contains:
+      - "new user"
+      - "useradd"
+      - "adduser"
+      - "new account"
+  condition: selection
+fields:
+  - user
+  - host
+falsepositives:
+  - Automated provisioning tools (Ansible, Puppet, CloudInit)
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1136.001
