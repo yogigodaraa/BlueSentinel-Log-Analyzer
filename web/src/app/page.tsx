@@ -28,10 +28,14 @@ export default function Home() {
             flags suspicious behavior with ML, writes plain-English incident summaries.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer" target="_blank" rel="noopener noreferrer"
+            <a href="/demo"
               className="rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg"
               style={{ backgroundImage: "linear-gradient(135deg,#3b82f6,#1e40af)" }}>
-              View on GitHub →
+              Try the live demo →
+            </a>
+            <a href="https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer" target="_blank" rel="noopener noreferrer"
+              className="rounded-full border border-zinc-700 px-6 py-3 text-sm font-semibold text-zinc-200 hover:bg-zinc-900">
+              View on GitHub
             </a>
           </div>
         </div>
