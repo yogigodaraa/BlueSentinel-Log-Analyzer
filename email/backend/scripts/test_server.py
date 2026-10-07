@@ -21,7 +21,7 @@ load_dotenv('../.env')
 print("=" * 60)
 print("🚀 SOCShield - Simple Test Server")
 print("=" * 60)
-print(f"✅ OpenAI Key: {os.getenv('OPENAI_API_KEY', 'NOT SET')[:20]}...")
+print(f"✅ OpenAI Key: {'configured' if os.getenv('OPENAI_API_KEY') else 'NOT SET'}")
 print(f"✅ AI Provider: {os.getenv('AI_PROVIDER', 'NOT SET')}")
 print("=" * 60)
 
