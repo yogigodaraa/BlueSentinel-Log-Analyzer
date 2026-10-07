@@ -51,7 +51,7 @@ class EmailMonitor:
             try:
                 self.connection.logout()
                 logger.info("Disconnected from IMAP server")
-            except:
+            except Exception:
                 pass
     
     def fetch_emails(
@@ -175,7 +175,7 @@ class EmailMonitor:
         try:
             if date_str:
                 return parsedate_to_datetime(date_str)
-        except:
+        except Exception:
             pass
         return None
     
@@ -209,7 +209,7 @@ class EmailMonitor:
                         payload = part.get_payload(decode=True)
                         charset = part.get_content_charset() or "utf-8"
                         body_text += payload.decode(charset, errors="ignore")
-                    except:
+                    except Exception:
                         pass
                 
                 elif content_type == "text/html":
@@ -217,7 +217,7 @@ class EmailMonitor:
                         payload = part.get_payload(decode=True)
                         charset = part.get_content_charset() or "utf-8"
                         body_html += payload.decode(charset, errors="ignore")
-                    except:
+                    except Exception:
                         pass
         else:
             try:
@@ -229,7 +229,7 @@ class EmailMonitor:
                     body_html = content
                 else:
                     body_text = content
-            except:
+            except Exception:
                 pass
         
         # If no text body, extract from HTML
@@ -243,7 +243,7 @@ class EmailMonitor:
         try:
             soup = BeautifulSoup(html, "lxml")
             return soup.get_text(separator="\n", strip=True)
-        except:
+        except Exception:
             return html
     
     def _extract_links(self, text: str, html: str) -> List[str]:
@@ -265,7 +265,7 @@ class EmailMonitor:
                     href = a["href"]
                     if href.startswith("http"):
                         links.add(href)
-            except:
+            except Exception:
                 # Fallback to regex
                 links.update(re.findall(url_pattern, html))
         

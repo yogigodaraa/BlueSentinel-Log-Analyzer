@@ -87,7 +87,7 @@ class IOCExtractor:
                     parsed = urlparse(url)
                     if parsed.netloc:
                         domains.add(parsed.netloc.lower())
-                except:
+                except Exception:
                     pass
             # Also extract from text parameter if provided
             if text:
@@ -134,9 +134,6 @@ class IOCExtractor:
         """Filter out invalid/common email addresses"""
         valid = []
         
-        # Common legitimate domains to exclude
-        common_domains = {'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com'}
-        
         for email in emails:
             domain = email.split('@')[-1].lower()
             
@@ -155,7 +152,7 @@ class IOCExtractor:
                 parsed = urlparse(url)
                 if parsed.scheme in ('http', 'https') and parsed.netloc:
                     valid.append(url)
-            except:
+            except Exception:
                 continue
         
         return list(set(valid))
@@ -182,7 +179,7 @@ class IOCExtractor:
                             full_domain = f"{ext.subdomain}.{full_domain}"
                         
                         valid.append(full_domain.lower())
-            except:
+            except Exception:
                 continue
         
         return list(set(valid))

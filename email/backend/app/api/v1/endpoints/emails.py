@@ -47,7 +47,7 @@ async def list_emails(
             "limit": limit,
             "offset": offset
         }
-    except Exception as e:
+    except Exception:
         # Return empty list if database is not set up yet
         return {
             "emails": [],

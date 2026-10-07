@@ -46,7 +46,7 @@ async def list_threats(
             "limit": limit,
             "offset": offset
         }
-    except Exception as e:
+    except Exception:
         # Return empty list if database is not set up yet
         return {
             "threats": [],

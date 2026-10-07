@@ -44,7 +44,7 @@ async def get_stats(db: AsyncSession = Depends(get_db)):
             "emails_today": emails_today,
             "detection_rate": round(detection_rate, 4)
         }
-    except Exception as e:
+    except Exception:
         # Return mock data if database is not set up yet
         return {
             "total_emails": 1250,

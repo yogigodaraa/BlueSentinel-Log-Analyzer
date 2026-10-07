@@ -5,3 +5,7 @@ exclude = [".venv"]
 
 [lint]
 select = ["E4", "E7", "E9", "F"]
+
+[lint.per-file-ignores]
+# Dev helper: puts the backend on sys.path before importing app modules.
+"scripts/test_server.py" = ["E402"]
