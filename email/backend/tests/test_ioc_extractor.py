@@ -31,30 +31,35 @@ class TestIOCExtractor:
     def test_extract_domains(self, extractor):
         """Test extracting domains"""
         text = """
-        Contact us at support@example.com
+        Contact us at support@paypa1-secure.com
         Visit www.test-site.org
-        Or go to subdomain.example.net
+        Or go to login.microsoft-verify.net
+        Docs live at example.com
         """
-        
+
         domains = extractor.extract_domains(text)
-        
-        assert len(domains) > 0
-        assert any('example.com' in domain for domain in domains)
+
+        assert any('paypa1-secure.com' in domain for domain in domains)
+        assert any('microsoft-verify.net' in domain for domain in domains)
+        # example.com is reserved for documentation, so it's not an IOC
+        assert not any(domain == 'example.com' for domain in domains)
     
     def test_extract_ip_addresses(self, extractor):
         """Test extracting IP addresses"""
         text = """
         Server is at 192.168.1.100
         Backup at 10.0.0.5
-        External: 203.0.113.45
+        C2: 185.220.101.4
+        Exfil to 45.33.32.156
         """
-        
+
         ips = extractor.extract_ip_addresses(text)
-        
-        assert len(ips) >= 3
-        assert '192.168.1.100' in ips
-        assert '10.0.0.5' in ips
-        assert '203.0.113.45' in ips
+
+        # Only routable addresses are IOCs; private ranges are filtered out
+        assert '185.220.101.4' in ips
+        assert '45.33.32.156' in ips
+        assert '192.168.1.100' not in ips
+        assert '10.0.0.5' not in ips
     
     def test_extract_email_addresses(self, extractor):
         """Test extracting email addresses"""
@@ -145,11 +150,6 @@ class TestRegexPatterns:
         for ip in valid_ips:
             assert ip_pattern.search(ip) is not None
         
-        invalid_ips = [
-            "999.999.999.999",
-            "1.2.3",
-            "a.b.c.d"
-        ]
         
         # Note: Basic regex will match these, need additional validation
         # This test just checks the pattern matches numbers

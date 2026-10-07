@@ -3,43 +3,53 @@ Tests for AI providers
 """
 import pytest
 from unittest.mock import Mock, patch, AsyncMock
-from app.ai.factory import AIProviderFactory
+from app.ai.factory import AIService
+from app.core.config import settings
 from app.ai.gemini_provider import GeminiProvider
 from app.ai.openai_provider import OpenAIProvider
 from app.ai.claude_provider import ClaudeProvider
 
 
 class TestAIProviderFactory:
-    """Test AI provider factory"""
-    
-    def test_create_gemini_provider(self, mock_ai_api_key):
-        """Test creating Gemini provider"""
-        with patch('google.generativeai.configure'):
-            with patch('google.generativeai.GenerativeModel'):
-                provider = AIProviderFactory.create_provider("gemini", mock_ai_api_key)
-                assert isinstance(provider, GeminiProvider)
-    
-    def test_create_openai_provider(self, mock_ai_api_key):
-        """Test creating OpenAI provider"""
-        with patch('openai.AsyncOpenAI'):
-            provider = AIProviderFactory.create_provider("openai", mock_ai_api_key)
-            assert isinstance(provider, OpenAIProvider)
-    
-    def test_create_claude_provider(self, mock_ai_api_key):
-        """Test creating Claude provider"""
-        with patch('anthropic.AsyncAnthropic'):
-            provider = AIProviderFactory.create_provider("claude", mock_ai_api_key)
-            assert isinstance(provider, ClaudeProvider)
-    
-    def test_invalid_provider(self, mock_ai_api_key):
-        """Test creating invalid provider raises error"""
+    """AIService picks the provider from settings.AI_PROVIDER and needs the matching key."""
+
+    @pytest.fixture(autouse=True)
+    def _reset_singleton(self):
+        AIService.reset()
+        yield
+        AIService.reset()
+
+    def test_create_gemini_provider(self, monkeypatch, mock_ai_api_key):
+        monkeypatch.setattr(settings, "AI_PROVIDER", "gemini")
+        monkeypatch.setattr(settings, "GOOGLE_API_KEY", mock_ai_api_key)
+        with patch("google.generativeai.configure"), patch("google.generativeai.GenerativeModel"):
+            assert isinstance(AIService.get_provider(), GeminiProvider)
+
+    def test_create_openai_provider(self, monkeypatch, mock_ai_api_key):
+        monkeypatch.setattr(settings, "AI_PROVIDER", "openai")
+        monkeypatch.setattr(settings, "OPENAI_API_KEY", mock_ai_api_key)
+        assert isinstance(AIService.get_provider(), OpenAIProvider)
+
+    def test_create_claude_provider(self, monkeypatch, mock_ai_api_key):
+        monkeypatch.setattr(settings, "AI_PROVIDER", "claude")
+        monkeypatch.setattr(settings, "ANTHROPIC_API_KEY", mock_ai_api_key)
+        assert isinstance(AIService.get_provider(), ClaudeProvider)
+
+    def test_invalid_provider(self, monkeypatch):
+        monkeypatch.setattr(settings, "AI_PROVIDER", "invalid")
         with pytest.raises(ValueError):
-            AIProviderFactory.create_provider("invalid", mock_ai_api_key)
-    
-    def test_missing_api_key(self):
-        """Test creating provider without API key raises error"""
+            AIService.get_provider()
+
+    def test_missing_api_key(self, monkeypatch):
+        monkeypatch.setattr(settings, "AI_PROVIDER", "gemini")
+        monkeypatch.setattr(settings, "GOOGLE_API_KEY", "")
         with pytest.raises(ValueError):
-            AIProviderFactory.create_provider("gemini", None)
+            AIService.get_provider()
+
+    def test_provider_is_a_singleton(self, monkeypatch, mock_ai_api_key):
+        monkeypatch.setattr(settings, "AI_PROVIDER", "claude")
+        monkeypatch.setattr(settings, "ANTHROPIC_API_KEY", mock_ai_api_key)
+        assert AIService.get_provider() is AIService.get_provider()
 
 
 class TestGeminiProvider:
@@ -74,7 +84,7 @@ class TestGeminiProvider:
         
         result = await gemini_provider.analyze_email(sample_phishing_email)
         
-        assert result["is_phishing"] == True
+        assert result["is_phishing"]
         assert result["confidence"] > 0.7
         assert result["risk_level"] in ["high", "critical", "medium"]
         assert len(result["indicators"]) > 0
@@ -97,7 +107,7 @@ class TestGeminiProvider:
         
         result = await gemini_provider.analyze_email(sample_legitimate_email)
         
-        assert result["is_phishing"] == False
+        assert not result["is_phishing"]
         assert result["risk_level"] == "low"
     
     @pytest.mark.asyncio
@@ -142,7 +152,7 @@ class TestOpenAIProvider:
     @pytest.fixture
     def openai_provider(self, mock_ai_api_key):
         """Create an OpenAI provider instance"""
-        with patch('openai.AsyncOpenAI') as mock_openai:
+        with patch('openai.AsyncOpenAI'):
             provider = OpenAIProvider(mock_ai_api_key)
             yield provider
     
@@ -179,7 +189,7 @@ class TestClaudeProvider:
     @pytest.fixture
     def claude_provider(self, mock_ai_api_key):
         """Create a Claude provider instance"""
-        with patch('anthropic.AsyncAnthropic') as mock_anthropic:
+        with patch('anthropic.AsyncAnthropic'):
             provider = ClaudeProvider(mock_ai_api_key)
             yield provider
     
@@ -198,11 +208,27 @@ class TestClaudeProvider:
     "explanation": "High confidence phishing"
 }
 ```'''
-        mock_response.content = [mock_content]
-        
-        claude_provider.client.messages.create = AsyncMock(return_value=mock_response)
-        
+        mock_content.type = "text"
+        thinking = Mock(type="thinking")  # current models may lead with a thinking block
+        mock_response.content = [thinking, mock_content]
+        mock_response.stop_reason = "end_turn"
+
+        claude_provider.client.beta.messages.create = AsyncMock(return_value=mock_response)
+
         result = await claude_provider.analyze_email(sample_phishing_email)
-        
-        assert "is_phishing" in result
-        assert "confidence" in result
+
+        assert result["is_phishing"] is True
+        assert result["risk_level"] == "critical"
+        kwargs = claude_provider.client.beta.messages.create.call_args.kwargs
+        assert "temperature" not in kwargs
+        assert kwargs["fallbacks"] == "default"
+
+    @pytest.mark.asyncio
+    async def test_refusal_returns_manual_review(self, claude_provider, sample_phishing_email):
+        """A declined request degrades to 'manual review' instead of crashing."""
+        refused = Mock(stop_reason="refusal", stop_details=Mock(category="cyber"), content=[])
+        claude_provider.client.beta.messages.create = AsyncMock(return_value=refused)
+
+        result = await claude_provider.analyze_email(sample_phishing_email)
+
+        assert result["risk_level"] == "unknown"

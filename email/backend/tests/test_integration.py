@@ -111,7 +111,6 @@ class TestAlertingWorkflow:
     @pytest.mark.asyncio
     async def test_high_risk_alert_generation(self, sample_phishing_email):
         """Test that high-risk emails trigger alerts"""
-        email = sample_phishing_email
         
         # High-risk criteria
         is_high_risk = False
@@ -121,7 +120,7 @@ class TestAlertingWorkflow:
         if confidence >= 0.8:
             is_high_risk = True
         
-        assert is_high_risk == True
+        assert is_high_risk
     
     @pytest.mark.asyncio
     async def test_low_risk_no_alert(self, sample_legitimate_email):
@@ -136,7 +135,7 @@ class TestAlertingWorkflow:
         if any(indicator in email['body'].lower() for indicator in phishing_indicators):
             is_low_risk = False
         
-        assert is_low_risk == True
+        assert is_low_risk
 
 
 @pytest.mark.integration

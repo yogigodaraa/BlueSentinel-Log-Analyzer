@@ -14,16 +14,15 @@ class TestHealthEndpoint:
         data = response.json()
         assert data["status"] == "healthy"
         assert "version" in data
-        assert "ai_provider" in data
+        assert "ai_provider" in data["configuration"]
     
     def test_root_endpoint(self, client: TestClient):
         """Test root endpoint"""
         response = client.get("/")
         assert response.status_code == 200
         data = response.json()
-        assert "message" in data
-        assert "SOCShield" in data["message"]
-        assert data["docs"] == "/docs"
+        assert "SOCShield" in data["name"]
+        assert data["documentation"]["swagger"] == "/docs"
 
 
 class TestAnalysisEndpoint:
@@ -102,7 +101,7 @@ class TestEmailsEndpoint:
         
         if response.status_code == 200:
             data = response.json()
-            assert isinstance(data, list) or "error" in data
+            assert isinstance(data["emails"], list) or "error" in data
     
     def test_get_email_by_id(self, client: TestClient):
         """Test getting email by ID"""
@@ -123,7 +122,7 @@ class TestThreatsEndpoint:
         
         if response.status_code == 200:
             data = response.json()
-            assert isinstance(data, list) or "error" in data
+            assert isinstance(data["threats"], list) or "error" in data
     
     def test_get_threat_by_id(self, client: TestClient):
         """Test getting threat by ID"""
