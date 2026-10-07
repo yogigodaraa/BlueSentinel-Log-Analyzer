@@ -28,8 +28,7 @@ class TestIOCExtractor:
         
         assert len(urls) >= 2
         hosts = {urlparse(url).hostname for url in urls}
-        assert 'example.com' in hosts
-        assert 'test.org' in hosts
+        assert {'example.com', 'test.org'} <= hosts
     
     def test_extract_domains(self, extractor):
         """Test extracting domains"""
@@ -42,8 +41,7 @@ class TestIOCExtractor:
 
         domains = extractor.extract_domains(text)
 
-        assert 'paypa1-secure.com' in domains
-        assert 'login.microsoft-verify.net' in domains
+        assert {'paypa1-secure.com', 'login.microsoft-verify.net'} <= set(domains)
         # example.com is reserved for documentation, so it's not an IOC
         assert not any(domain == 'example.com' for domain in domains)
     
