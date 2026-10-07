@@ -6,7 +6,7 @@ Track application performance and security events
 import time
 from typing import Dict, Any, Optional
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from datetime import datetime
 from collections import defaultdict
 import asyncio
 

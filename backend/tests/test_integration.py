@@ -2,7 +2,6 @@
 Integration tests for the complete phishing detection workflow
 """
 import pytest
-from unittest.mock import Mock, patch
 
 
 @pytest.mark.integration

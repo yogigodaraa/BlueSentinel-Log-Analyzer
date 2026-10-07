@@ -5,13 +5,11 @@ Query external threat intelligence sources for IOC reputation
 
 import asyncio
 from typing import Dict, Any, List, Optional
-import httpx
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from app.core.config import settings
 from app.core.logging import get_logger
-from app.core.cache import cached, cache_manager
-from app.core.exceptions import ThreatIntelException
+from app.core.cache import cache_manager
 
 logger = get_logger(__name__)
 

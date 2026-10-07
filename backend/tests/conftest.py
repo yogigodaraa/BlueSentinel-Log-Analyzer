@@ -10,7 +10,6 @@ from sqlalchemy.pool import NullPool
 
 from app.main import app
 from app.core.database import Base, get_db
-from app.core.config import settings
 
 # Test database URL
 TEST_DATABASE_URL = "sqlite+aiosqlite:///:memory:"

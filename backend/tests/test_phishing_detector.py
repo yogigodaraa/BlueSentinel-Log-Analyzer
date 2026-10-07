@@ -2,7 +2,7 @@
 Tests for phishing detection service
 """
 import pytest
-from unittest.mock import Mock, patch, AsyncMock
+from unittest.mock import patch
 from app.services.phishing_detector import PhishingDetector
 
 

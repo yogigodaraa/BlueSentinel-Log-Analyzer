@@ -6,7 +6,6 @@ SQLAlchemy models for SOCShield
 from sqlalchemy import Column, Integer, String, DateTime, Boolean, Float, Text, JSON, ForeignKey, Enum
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from datetime import datetime
 import enum
 
 from app.core.database import Base

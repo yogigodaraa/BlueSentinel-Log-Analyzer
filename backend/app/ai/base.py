@@ -4,7 +4,7 @@ Manages multiple AI providers (Gemini, OpenAI, Claude)
 """
 
 from abc import ABC, abstractmethod
-from typing import Dict, Any, Optional
+from typing import Dict, Any
 from enum import Enum
 import logging
 

@@ -62,3 +62,12 @@ docker-compose.override.yml
 # Temporary files
 *.tmp
 .cache/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Env files (only examples are committed)
+.env.*
+!.env.example
+.venv/
+coverage.xml

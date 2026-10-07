@@ -5,7 +5,7 @@ Extracts domains, URLs, IPs, email addresses from email content
 
 import re
 import ipaddress
-from typing import List, Dict, Any, Set
+from typing import List, Dict, Any
 from urllib.parse import urlparse
 import tldextract
 import logging

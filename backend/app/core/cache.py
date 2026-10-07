@@ -7,8 +7,6 @@ import json
 import hashlib
 from typing import Optional, Any, Callable
 from functools import wraps
-import asyncio
-from datetime import timedelta
 
 try:
     import redis.asyncio as redis

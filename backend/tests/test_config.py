@@ -1,7 +1,6 @@
 """
 Tests for configuration
 """
-import pytest
 from app.core.config import Settings
 
 

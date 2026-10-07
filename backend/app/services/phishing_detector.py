@@ -49,7 +49,7 @@ class PhishingDetector:
             
             async with Timer('phishing.analysis.duration'):
                 # Step 1: Extract IOCs
-                log.info(f"Starting phishing analysis")
+                log.info("Starting phishing analysis")
                 iocs = self.ioc_extractor.extract_all(email_content)
                 
                 # Record IOC metrics
