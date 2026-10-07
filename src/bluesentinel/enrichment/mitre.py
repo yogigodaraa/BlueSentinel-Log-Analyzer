@@ -54,7 +54,7 @@ _RULES: tuple[TechniqueRule, ...] = (
         "initial-access",
         "Valid Accounts: Local Accounts",
         Severity.MEDIUM,
-        re.compile(r"\baccepted password for\b|\bsession opened for user\b", re.I),
+        re.compile(r"^(?!.*\bcron\b).*(\baccepted password for\b|\bsession opened for user\b)", re.I),
     ),
     TechniqueRule(
         "T1068",
@@ -103,7 +103,7 @@ _RULES: tuple[TechniqueRule, ...] = (
         "defense-evasion",
         "Impair Defenses: Disable Firewall",
         Severity.CRITICAL,
-        re.compile(r"\b(iptables|ufw|firewalld)\b.*\b(flush|stop|disable|-F)\b", re.I),
+        re.compile(r"\b(iptables|ufw|firewalld)\b.*(\b(flush|stop|disable)\b|(?<!\S)-F\b)", re.I),
     ),
     TechniqueRule(
         "T1059.004",
