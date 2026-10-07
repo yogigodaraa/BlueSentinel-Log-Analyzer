@@ -1,0 +1,112 @@
+# SOCShield
+
+> **This is now the email-security module of [BlueSentinel](../README.md).** It was previously the standalone SOCShield repository; its history is preserved here.
+
+[![CI](https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](../LICENSE)
+
+AI-assisted phishing analysis for Security Operations Centers. Paste or upload an email and
+SOCShield extracts indicators of compromise (IOCs), classifies the email with an LLM, checks
+URLs and domains against threat-intelligence feeds, runs header forensics (SPF / DKIM / DMARC)
+and business-email-compromise (BEC) checks, and maps what it finds to MITRE ATT&CK.
+
+## What works today vs. what's planned
+
+Read from the code (October 2026). Several features in older docs are only config placeholders.
+
+| Feature | Status | Where |
+|---|---|---|
+| Email analysis API: regex + LLM IOC extraction, LLM classification, risk score | ✅ Implemented | `backend/app/services/phishing_detector.py`, `POST /api/v1/analysis/analyze` |
+| IOC extraction (domains, URLs, IPs, emails) | ✅ Implemented | `services/ioc_extractor.py`, `POST /api/v1/analysis/extract-iocs` |
+| Threat intel | 🟡 Partial: the analysis path calls placeholder VirusTotal/urlscan/PhishTank checks; the real URLhaus/AbuseIPDB/OpenPhish clients in `threat_feeds.py` aren't wired in yet | `services/threat_intel.py`, `services/threat_feeds.py` |
+| Header forensics (SPF/DKIM/DMARC, Received chain) + BEC lookalike/homograph detection | ✅ Implemented | `services/header_forensics.py`, `services/bec_detector.py`, `POST /api/v1/forensics/analyze` |
+| MITRE ATT&CK mapping (T1566 Phishing and sub-techniques) | ✅ Implemented | `services/mitre_mapping.py`, `GET /api/v1/forensics/mitre/coverage` |
+| Switchable LLM provider: Gemini / OpenAI / Claude | ✅ Implemented, ⚠️ model ids are dated (see below) | `backend/app/ai/` |
+| Dashboard (stats, threat feed, analysis panel) | ✅ Implemented. Falls back to mock data when Postgres is unavailable. | `frontend/` |
+| Rate limiting, security headers, request tracking | ✅ Implemented | `core/middleware.py` |
+| Live inbox monitoring (IMAP) | 🟡 Service written, **not wired** into the app | `services/email_monitor.py` |
+| Background processing (Celery) | 🟡 Celery app configured, **no tasks defined** | `app/worker.py` |
+| Auto-quarantine / auto-block | ⬜ Config flag + DB column only | `core/config.py` |
+| JWT auth, Slack / Teams / Twilio alerts, Splunk | ⬜ Config placeholders only | `config/.env.example` |
+
+> **Model ids:** Claude uses `CLAUDE_MODEL` (default `claude-opus-5-5`). The OpenAI (`gpt-4-turbo-preview`) and
+> Gemini (`gemini-2.0-flash-exp`) ids are still hard-coded and may need updating.
+
+## Screenshots / architecture
+
+<!-- TODO: add a dashboard screenshot (using the sample emails, never real mail) -->
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a diagram and walkthrough.
+
+## Tech stack
+
+- **Backend** (`backend/`): Python 3.11, FastAPI, Pydantic v2, SQLAlchemy (async; PostgreSQL in production, SQLite in tests), Redis cache (with in-memory fallback), Celery, Anthropic / OpenAI / Google Generative AI SDKs
+- **Frontend** (`frontend/`): Next.js 15, React, TypeScript, Tailwind CSS, axios
+- **Infra**: Dockerfiles for both services, `config/docker-compose.yml`
+
+## Quickstart
+
+```bash
+git clone https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer.git
+cd BlueSentinel-Log-Analyzer/email
+```
+
+**Backend**
+
+```bash
+cd backend
+python3.11 -m venv venv && source venv/bin/activate
+pip install -r requirements-optimized.txt   # lean set; requirements.txt adds unused ML libraries
+cp ../config/.env.example .env               # settings are read from backend/.env
+# set AI_PROVIDER and the matching *_API_KEY; Postgres/Redis are optional for local dev
+uvicorn app.main:app --reload --port 8000    # API docs at http://localhost:8000/docs
+```
+
+**Frontend**
+
+```bash
+cd frontend
+npm ci
+cp .env.example .env.local                   # NEXT_PUBLIC_API_URL=http://localhost:8000
+npm run dev                                  # http://localhost:3000
+```
+
+Or use `npm run dev:both` from the repo root (expects the backend venv at `backend/venv`).
+
+### Tests and checks
+
+```bash
+cd backend && pytest            # 71 tests
+cd backend && ruff check .
+cd frontend && npm run type-check && npm run build
+```
+
+## Usage example
+
+```bash
+curl -X POST http://localhost:8000/api/v1/forensics/analyze \
+  -H "Content-Type: application/json" \
+  -d '{"raw_email": "From: CEO <ceo@examp1e.com>\nSubject: Urgent wire\n\nPlease send $40k today.", "protected_domains": ["example.com"]}'
+```
+
+## Project status
+
+**Active, all backend tests passing (71).** The frontend type-checks and builds; ESLint isn't configured yet.
+Claude analysis uses `CLAUDE_MODEL` (default `claude-opus-5-5`) with server-side refusal fallbacks.
+
+## Roadmap
+
+- [x] Fix the failing backend tests and make CI green
+- [x] Update SDK versions and the Claude model id (OpenAI/Gemini ids still to do)
+- [ ] Configure ESLint for the frontend
+- [ ] Wire `EmailMonitor` into a Celery task for live inbox polling
+- [ ] Implement auto-quarantine (IMAP move) behind `ENABLE_AUTO_QUARANTINE`
+- [ ] Consolidate the many status/summary markdown files into `docs/`
+
+## Security
+
+Report vulnerabilities privately. See [SECURITY.md](https://github.com/yogigodaraa/.github/blob/main/SECURITY.md).
+Sample emails in tests are synthetic.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
