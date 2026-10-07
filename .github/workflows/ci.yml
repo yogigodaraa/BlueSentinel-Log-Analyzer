@@ -13,7 +13,10 @@ permissions:
   contents: read
 
 jobs:
-  # Check names: "python / test" and "web / test". Keep job ids stable.
+  # Check names: "python / test", "web / test", "email / test", "email-web / test".
+  # Keep job ids stable: the main-branch ruleset requires them.
+
+  # Log analytics (BlueSentinel core)
   python:
     uses: yogigodaraa/.github/.github/workflows/python-ci.yml@main
     with:
@@ -23,3 +26,19 @@ jobs:
     uses: yogigodaraa/.github/.github/workflows/node-ci.yml@main
     with:
       working-directory: web
+
+  # Email security (formerly SOCShield)
+  email:
+    uses: yogigodaraa/.github/.github/workflows/python-ci.yml@main
+    with:
+      working-directory: email/backend
+      python-version: "3.11"
+      # requirements.txt also pulls torch/transformers/spacy, which the code doesn't import.
+      requirements: requirements-optimized.txt
+
+  email-web:
+    uses: yogigodaraa/.github/.github/workflows/node-ci.yml@main
+    with:
+      working-directory: email/frontend
+      # "lint" is skipped until ESLint is configured (next lint prompts interactively).
+      scripts: "type-check build"
