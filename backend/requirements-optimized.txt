@@ -39,7 +39,7 @@ tldextract==3.6.0  # For domain parsing in IOC extraction
 # Security & Authentication
 python-jose[cryptography]==3.4.0
 passlib[bcrypt]==1.7.4
-python-multipart==0.0.26
+python-multipart==0.0.27
 bcrypt==4.1.1
 
 # HTTP & API Clients
