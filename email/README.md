@@ -1,7 +1,9 @@
 # SOCShield
 
-[![CI](https://github.com/yogigodaraa/SOCShield/actions/workflows/ci.yml/badge.svg)](https://github.com/yogigodaraa/SOCShield/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+> **This is now the email-security module of [BlueSentinel](../README.md).** It was previously the standalone SOCShield repository; its history is preserved here.
+
+[![CI](https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](../LICENSE)
 
 AI-assisted phishing analysis for Security Operations Centers. Paste or upload an email and
 SOCShield extracts indicators of compromise (IOCs), classifies the email with an LLM, checks
@@ -27,9 +29,8 @@ Read from the code (October 2026). Several features in older docs are only confi
 | Auto-quarantine / auto-block | ⬜ Config flag + DB column only | `core/config.py` |
 | JWT auth, Slack / Teams / Twilio alerts, Splunk | ⬜ Config placeholders only | `config/.env.example` |
 
-> ⚠️ **Model ids:** the providers use `claude-3-5-sonnet-20241022`, `gpt-4-turbo-preview` and
-> `gemini-2.0-flash-exp` with SDK versions pinned in 2023. Some of these have since been retired,
-> so live LLM calls may fail until they're updated. See the roadmap.
+> **Model ids:** Claude uses `CLAUDE_MODEL` (default `claude-opus-5-5`). The OpenAI (`gpt-4-turbo-preview`) and
+> Gemini (`gemini-2.0-flash-exp`) ids are still hard-coded and may need updating.
 
 ## Screenshots / architecture
 
@@ -74,7 +75,7 @@ Or use `npm run dev:both` from the repo root (expects the backend venv at `backe
 ### Tests and checks
 
 ```bash
-cd backend && pytest            # see "Project status": part of the suite is currently failing
+cd backend && pytest            # 71 tests
 cd backend && ruff check .
 cd frontend && npm run type-check && npm run build
 ```
@@ -89,15 +90,13 @@ curl -X POST http://localhost:8000/api/v1/forensics/analyze \
 
 ## Project status
 
-**Active, but needs maintenance.** In CI: 51 backend tests pass, 7 fail, and 4 error (one test
-module targets an API that no longer exists, and the API tests use async fixtures that need updating for
-pytest 9). Tracked in the repo issues. The frontend type-checks and builds; ESLint isn't
-configured yet.
+**Active, all backend tests passing (71).** The frontend type-checks and builds; ESLint isn't configured yet.
+Claude analysis uses `CLAUDE_MODEL` (default `claude-opus-5-5`) with server-side refusal fallbacks.
 
 ## Roadmap
 
-- [ ] Fix the failing backend tests and make CI green
-- [ ] Update LLM model ids and SDK versions
+- [x] Fix the failing backend tests and make CI green
+- [x] Update SDK versions and the Claude model id (OpenAI/Gemini ids still to do)
 - [ ] Configure ESLint for the frontend
 - [ ] Wire `EmailMonitor` into a Celery task for live inbox polling
 - [ ] Implement auto-quarantine (IMAP move) behind `ENABLE_AUTO_QUARANTINE`

@@ -7,6 +7,20 @@ Advanced log anomaly detection & UBA for SOC teams. Drain3 template mining · De
 
 > v2 is a full rewrite. The v1 code is preserved under `src/bluesentinel/legacy/` and the old Flask dashboard under `dashboard.py` — both still run. v2 ships alongside as a drop-in upgrade with a much stronger detection stack.
 
+## Two modules, one SOC platform
+
+| Module | What it covers | Where |
+|---|---|---|
+| **Log analytics** | Drain3 template mining, Isolation Forest / DeepLog / LogBERT detectors, Sigma rules, MITRE ATT&CK enrichment, attack-chain graphs | `src/bluesentinel/`, `web/` |
+| **Email security** *(formerly [SOCShield](https://github.com/yogigodaraa/SOCShield))* | Phishing analysis: IOC extraction, LLM classification (Claude / OpenAI / Gemini), threat-intel enrichment, SPF/DKIM/DMARC header forensics, BEC lookalike detection, MITRE mapping | `email/backend/` (FastAPI), `email/frontend/` (Next.js) |
+
+The email module was merged in with its full git history (`git log -- email/`). Quickstart and
+details: [email/README.md](email/README.md).
+
+```bash
+cd email/backend && pip install -r requirements-optimized.txt && pytest   # 71 tests
+```
+
 ## Why v2
 
 v1 shipped a single Isolation Forest over message-length + keyword features — a reasonable baseline, but a long way from the literature. v2 catches up:
