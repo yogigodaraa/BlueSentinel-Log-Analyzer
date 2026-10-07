@@ -120,12 +120,13 @@ async def analyze_email(request: EmailAnalysisRequest):
             "ai_provider": "openai"
         }
         
-    except Exception as e:
+    except Exception:
+        # Log details server-side; never send stack traces to the client.
         import traceback
+        traceback.print_exc()
         return {
             "success": False,
-            "error": str(e),
-            "traceback": traceback.format_exc()
+            "error": "Analysis failed. See server logs for details.",
         }
 
 if __name__ == "__main__":

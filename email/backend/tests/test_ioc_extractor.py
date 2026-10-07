@@ -1,6 +1,8 @@
 """
 Tests for IOC extractor service
 """
+from urllib.parse import urlparse
+
 import pytest
 import re
 from app.services.ioc_extractor import IOCExtractor
@@ -25,8 +27,9 @@ class TestIOCExtractor:
         urls = extractor.extract_urls(text)
         
         assert len(urls) >= 2
-        assert any('example.com' in url for url in urls)
-        assert any('test.org' in url for url in urls)
+        hosts = {urlparse(url).hostname for url in urls}
+        assert 'example.com' in hosts
+        assert 'test.org' in hosts
     
     def test_extract_domains(self, extractor):
         """Test extracting domains"""
@@ -39,8 +42,8 @@ class TestIOCExtractor:
 
         domains = extractor.extract_domains(text)
 
-        assert any('paypa1-secure.com' in domain for domain in domains)
-        assert any('microsoft-verify.net' in domain for domain in domains)
+        assert 'paypa1-secure.com' in domains
+        assert 'login.microsoft-verify.net' in domains
         # example.com is reserved for documentation, so it's not an IOC
         assert not any(domain == 'example.com' for domain in domains)
     
