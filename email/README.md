@@ -18,7 +18,7 @@ Read from the code (October 2026). Several features in older docs are only confi
 |---|---|---|
 | Email analysis API: regex + LLM IOC extraction, LLM classification, risk score | ✅ Implemented | `backend/app/services/phishing_detector.py`, `POST /api/v1/analysis/analyze` |
 | IOC extraction (domains, URLs, IPs, emails) | ✅ Implemented | `services/ioc_extractor.py`, `POST /api/v1/analysis/extract-iocs` |
-| Threat intel: VirusTotal, urlscan, PhishTank, URLhaus, AbuseIPDB, OpenPhish | ✅ Implemented (needs your API keys where applicable) | `services/threat_intel.py`, `services/threat_feeds.py` |
+| Threat intel | 🟡 Partial: the analysis path calls placeholder VirusTotal/urlscan/PhishTank checks; the real URLhaus/AbuseIPDB/OpenPhish clients in `threat_feeds.py` aren't wired in yet | `services/threat_intel.py`, `services/threat_feeds.py` |
 | Header forensics (SPF/DKIM/DMARC, Received chain) + BEC lookalike/homograph detection | ✅ Implemented | `services/header_forensics.py`, `services/bec_detector.py`, `POST /api/v1/forensics/analyze` |
 | MITRE ATT&CK mapping (T1566 Phishing and sub-techniques) | ✅ Implemented | `services/mitre_mapping.py`, `GET /api/v1/forensics/mitre/coverage` |
 | Switchable LLM provider: Gemini / OpenAI / Claude | ✅ Implemented, ⚠️ model ids are dated (see below) | `backend/app/ai/` |
@@ -46,8 +46,8 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a diagram and walkthrough.
 ## Quickstart
 
 ```bash
-git clone https://github.com/yogigodaraa/SOCShield.git
-cd SOCShield
+git clone https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer.git
+cd BlueSentinel-Log-Analyzer/email
 ```
 
 **Backend**
