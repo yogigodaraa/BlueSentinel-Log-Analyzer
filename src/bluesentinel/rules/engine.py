@@ -48,7 +48,7 @@ class SigmaRule:
         return out
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "SigmaRule":
+    def from_dict(cls, data: dict[str, Any]) -> SigmaRule:
         level = _parse_level(data.get("level", "medium"))
         return cls(
             id=str(data.get("id", data.get("title", "unnamed"))),
@@ -232,7 +232,7 @@ def _eval_condition(condition: str, matches: dict[str, bool]) -> bool:
     # Fall back to python-evaluating a simple boolean expression where
     # selection names are variables.
     try:
-        return bool(eval(c, {"__builtins__": {}}, matches))  # noqa: S307
+        return bool(eval(c, {"__builtins__": {}}, matches))
     except Exception:
         return False
 

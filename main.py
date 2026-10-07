@@ -1,4 +1,5 @@
-from blue_sentinel import log_parser, anomaly_detector, summarizer
+from blue_sentinel import anomaly_detector, log_parser, summarizer
+
 
 def main(log_file_path):
     # Step 1: Parse the log file
@@ -23,7 +24,7 @@ def main(log_file_path):
         for summary in summaries:
             report_file.write(summary + "\n\n")
 
-    print(f"📝 Alerts report saved to alerts_report.txt")
+    print("📝 Alerts report saved to alerts_report.txt")
 
 if __name__ == "__main__":
     import argparse

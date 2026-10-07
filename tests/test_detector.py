@@ -1,4 +1,5 @@
-from blue_sentinel import log_parser, anomaly_detector
+from blue_sentinel import anomaly_detector, log_parser
+
 
 def test_anomaly_detector():
     logs = log_parser.parse_log("data/sample_auth.log")

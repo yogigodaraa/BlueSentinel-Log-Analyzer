@@ -55,7 +55,7 @@ class Benchmark:
             # Train on the normal prefix (unsupervised / one-class setup)
             normal_mask = labels == 0
             cutoff = int(len(events) * self.train_fraction)
-            train_events = [ev for ev, m in zip(events[:cutoff], normal_mask[:cutoff]) if m]
+            train_events = [ev for ev, m in zip(events[:cutoff], normal_mask[:cutoff], strict=True) if m]
 
             for detector in self.detectors:
                 t0 = time.perf_counter()

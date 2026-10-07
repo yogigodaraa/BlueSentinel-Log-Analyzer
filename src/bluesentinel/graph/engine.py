@@ -34,13 +34,14 @@ UBA platforms (Splunk UBA, Exabeam Fusion, Microsoft Sentinel Fusion).
 from __future__ import annotations
 
 from collections import defaultdict
+from collections.abc import Iterable
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
-from typing import Any, Iterable
+from datetime import timedelta
+from itertools import pairwise
+from typing import Any
 
 from bluesentinel.graph.kill_chain import KillChainScore, score_path, tactic_of
 from bluesentinel.types import Detection, Severity
-
 
 # ─── Public types ────────────────────────────────────────────────────────
 
@@ -205,7 +206,7 @@ class AttackGraphEngine:
         # value in AT LEAST ONE entity field.
         consistent_hops = 0
         total_hops = max(len(path) - 1, 1)
-        for a, b in zip(path, path[1:], strict=False):
+        for a, b in pairwise(path):
             for f in _ENTITY_FIELDS:
                 va = getattr(a.event, f, None)
                 vb = getattr(b.event, f, None)
@@ -313,7 +314,7 @@ def chain_to_mermaid(chain: AttackChain) -> str:
         ts = d.event.timestamp.strftime("%H:%M:%S")
         lines.append(f'    {nid}["{ts} — {label}"]')
         lines.append(f'    style {nid} fill:{colour_for.get(d.event.severity, "#94a3b8")}')
-    for i, (a, b) in enumerate(zip(chain.detections, chain.detections[1:], strict=False)):
+    for i, (_a, b) in enumerate(pairwise(chain.detections)):
         tech = (b.mitre_techniques or b.event.mitre_techniques or [""])[0]
         tactic = tactic_of(tech) if tech else ""
         edge_label = f"{tech} ({tactic})" if tech else ""

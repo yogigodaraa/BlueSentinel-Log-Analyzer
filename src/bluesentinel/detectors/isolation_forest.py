@@ -58,7 +58,7 @@ class IsolationForestDetector(BaseDetector):
         return X
 
     # ─── Lifecycle ─────────────────────────────────────────────────────
-    def fit(self, events: Sequence[LogEvent]) -> "IsolationForestDetector":
+    def fit(self, events: Sequence[LogEvent]) -> IsolationForestDetector:
         X = self._features(events)
         if len(X) > 0:
             self._model.fit(X)

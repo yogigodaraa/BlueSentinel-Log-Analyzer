@@ -1,5 +1,6 @@
-from sklearn.ensemble import IsolationForest
 import numpy as np
+from sklearn.ensemble import IsolationForest
+
 
 def extract_features(logs):
     """
@@ -28,5 +29,5 @@ def detect_anomalies(logs):
     preds = model.fit_predict(X)
 
     # Tag log entries with prediction
-    anomalies = [log for log, pred in zip(logs, preds) if pred == -1]
+    anomalies = [log for log, pred in zip(logs, preds, strict=True) if pred == -1]
     return anomalies

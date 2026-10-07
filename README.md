@@ -1,5 +1,8 @@
 # BlueSentinel v2
 
+[![CI](https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/yogigodaraa/BlueSentinel-Log-Analyzer/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Advanced log anomaly detection & UBA for SOC teams. Drain3 template mining · DeepLog · LogBERT · MITRE ATT&CK · Sigma rules · FastAPI.
 
 > v2 is a full rewrite. The v1 code is preserved under `src/bluesentinel/legacy/` and the old Flask dashboard under `dashboard.py` — both still run. v2 ships alongside as a drop-in upgrade with a much stronger detection stack.
@@ -157,6 +160,21 @@ tests/                    pytest suite
 data/                     sample auth.log + downloaded datasets
 docs/                     architecture, models, evaluation notes
 ```
+
+## Tests
+
+```bash
+pip install -e ".[dev]"
+pytest            # 29 tests; 2 attack-graph tests currently fail (see issues)
+ruff check .
+cd web && npm ci && npm run lint && npm run build
+```
+
+## Sample data
+
+`data/sample_auth.log` is 2,000 lines from the public [LogHub](https://github.com/logpai/loghub)
+**Linux** dataset (He et al.): historical SSH attack traffic against a research host. It contains no
+personal data from this project. Don't add real logs from your own systems.
 
 ## Status
 

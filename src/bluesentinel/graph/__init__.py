@@ -21,19 +21,19 @@ from bluesentinel.graph.engine import (
     chain_to_mermaid,
 )
 from bluesentinel.graph.kill_chain import (
-    KillChainScore,
     TACTIC_ORDER,
     TECHNIQUE_TO_TACTIC,
+    KillChainScore,
     score_path,
     tactic_of,
 )
 
 __all__ = [
+    "TACTIC_ORDER",
+    "TECHNIQUE_TO_TACTIC",
     "AttackChain",
     "AttackGraphEngine",
     "KillChainScore",
-    "TACTIC_ORDER",
-    "TECHNIQUE_TO_TACTIC",
     "chain_to_mermaid",
     "score_path",
     "tactic_of",

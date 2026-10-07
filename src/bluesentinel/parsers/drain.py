@@ -53,7 +53,7 @@ class DrainParser(BaseParser):
         self._max_children = max_children
 
     @property
-    def miner(self) -> "TemplateMiner":
+    def miner(self) -> TemplateMiner:
         """Lazy-initialise Drain3 so the import cost is paid on first use."""
         if self._miner is None:
             from drain3 import TemplateMiner
@@ -86,7 +86,7 @@ class DrainParser(BaseParser):
         persistence.save_state(self.miner.drain.to_json())  # type: ignore[no-untyped-call]
 
     @classmethod
-    def load(cls, path: str, base_parser: BaseParser | None = None) -> "DrainParser":
+    def load(cls, path: str, base_parser: BaseParser | None = None) -> DrainParser:
         parser = cls(base_parser=base_parser)
         # Touch miner to initialise, then load state
         _ = parser.miner

@@ -1,13 +1,14 @@
-from flask import Flask, render_template, request, jsonify, Response
-import os
 import json
+import os
+
+from flask import Flask, Response, render_template, request
 
 app = Flask(__name__)
 
 def load_alerts(filter_level=None):
     alerts = []
     if os.path.exists("alerts_report.txt"):
-        with open("alerts_report.txt", "r") as f:
+        with open("alerts_report.txt") as f:
             block = []
             for line in f:
                 if line.strip() == "":

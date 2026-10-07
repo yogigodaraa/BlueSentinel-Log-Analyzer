@@ -20,6 +20,7 @@ Reference: MITRE ATT&CK Enterprise Matrix.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from itertools import pairwise
 
 # Ordering from MITRE ATT&CK Enterprise Matrix. Same tactic = 0 step, a
 # forward jump across the chain is allowed but costs more than an
@@ -154,7 +155,7 @@ def score_path(technique_ids: list[str]) -> KillChainScore:
         if not unique_tactics or unique_tactics[-1] != t:
             unique_tactics.append(t)
 
-    for a, b in zip(tactics, tactics[1:], strict=False):
+    for a, b in pairwise(tactics):
         ia, ib = _TACTIC_IDX.get(a, -1), _TACTIC_IDX.get(b, -1)
         if ia < 0 or ib < 0:
             continue

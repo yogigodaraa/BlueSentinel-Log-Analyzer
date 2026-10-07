@@ -17,7 +17,6 @@ Reference:
 
 from __future__ import annotations
 
-import json
 from collections import OrderedDict
 from collections.abc import Sequence
 from pathlib import Path
@@ -29,8 +28,7 @@ from bluesentinel.detectors.base import BaseDetector
 from bluesentinel.types import LogEvent
 
 if TYPE_CHECKING:
-    import torch
-    import torch.nn as nn
+    pass
 
 
 class _DeepLogLSTM:
@@ -121,7 +119,7 @@ class DeepLogDetector(BaseDetector):
         return [self._vocab_index(ev.template_id) for ev in events if ev.template_id is not None]
 
     # ─── Lifecycle ─────────────────────────────────────────────────────
-    def fit(self, events: Sequence[LogEvent]) -> "DeepLogDetector":
+    def fit(self, events: Sequence[LogEvent]) -> DeepLogDetector:
         ids = self._event_to_ids(events)
         if len(ids) <= self.window + 1:
             # Not enough data to train — fall back to a degenerate model
