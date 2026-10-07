@@ -8,7 +8,7 @@ LOG_PATTERN = re.compile(
 def parse_log(file_path):
     parsed_logs = []
 
-    with open(file_path, 'r') as file:
+    with open(file_path) as file:
         for line in file:
             match = LOG_PATTERN.match(line.strip())
             if match:

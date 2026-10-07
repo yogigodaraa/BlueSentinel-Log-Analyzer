@@ -35,7 +35,7 @@ class BaseDetector(ABC):
 
     # ─── Lifecycle ─────────────────────────────────────────────────────
     @abstractmethod
-    def fit(self, events: Sequence[LogEvent]) -> "BaseDetector":
+    def fit(self, events: Sequence[LogEvent]) -> BaseDetector:
         """Learn normal patterns from a training corpus."""
 
     @abstractmethod
@@ -71,9 +71,9 @@ class BaseDetector(ABC):
         return f"{self.name} scored event {score:.3f} (≥ {self.default_threshold:.3f})"
 
     # ─── Persistence ───────────────────────────────────────────────────
-    def save(self, path: str) -> None:  # noqa: D401 — default is no-op
+    def save(self, path: str) -> None:  # noqa: B027 (intentional no-op default)
         """Persist the detector to disk. Subclasses override if they have state."""
 
     @classmethod
-    def load(cls, path: str) -> "BaseDetector":
+    def load(cls, path: str) -> BaseDetector:
         raise NotImplementedError(f"{cls.__name__}.load not implemented")

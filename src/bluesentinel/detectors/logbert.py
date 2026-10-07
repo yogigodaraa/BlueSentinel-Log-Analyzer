@@ -53,12 +53,12 @@ class LogBERTDetector(BaseDetector):
         self.num_prototypes = num_prototypes
         self.batch_size = batch_size
         self.device = device
-        self._encoder: "SentenceTransformer" | None = None
+        self._encoder: SentenceTransformer | None = None
         self._prototypes: np.ndarray | None = None
 
     # ─── Encoder ───────────────────────────────────────────────────────
     @property
-    def encoder(self) -> "SentenceTransformer":
+    def encoder(self) -> SentenceTransformer:
         if self._encoder is None:
             # Lazy import so users can skip the transformers dep if they
             # only want the classical detectors.
@@ -87,7 +87,7 @@ class LogBERTDetector(BaseDetector):
         )
 
     # ─── Lifecycle ─────────────────────────────────────────────────────
-    def fit(self, events: Sequence[LogEvent]) -> "LogBERTDetector":
+    def fit(self, events: Sequence[LogEvent]) -> LogBERTDetector:
         embs = self._encode(events)
         if len(embs) == 0:
             return self
