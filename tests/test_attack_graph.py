@@ -102,10 +102,10 @@ def test_engine_reconstructs_textbook_attack():
 def test_engine_rejects_random_noise():
     # Five unrelated events from different users / hosts, no technique links
     detections = [
-        mk("cron job ran", 0, user="alice", host="host-1", techniques=[]),
-        mk("session opened", 60, user="bob", host="host-2", techniques=[]),
-        mk("cron job ran", 120, user="carol", host="host-3", techniques=[]),
-        mk("session opened", 180, user="dave", host="host-4", techniques=[]),
+        mk("cron job ran", 0, user="alice", host="host-1", ip="10.0.0.1", techniques=[]),
+        mk("session opened", 60, user="bob", host="host-2", ip="10.0.0.2", techniques=[]),
+        mk("cron job ran", 120, user="carol", host="host-3", ip="10.0.0.3", techniques=[]),
+        mk("session opened", 180, user="dave", host="host-4", ip="10.0.0.4", techniques=[]),
     ]
     engine = AttackGraphEngine(min_overall_score=0.3)
     chains = engine.reconstruct(detections)

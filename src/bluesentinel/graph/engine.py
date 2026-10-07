@@ -297,8 +297,8 @@ def _fmt_duration(d: timedelta) -> str:
 def chain_to_mermaid(chain: AttackChain) -> str:
     """Render an AttackChain as a Mermaid flowchart (for README / dashboard embed).
 
-    Each detection becomes a node; the edge labels show the MITRE
-    technique chain. Nodes are coloured by severity.
+    Each detection becomes a node labelled with its own MITRE techniques; the edge
+    labels show the technique (and tactic) each step leads into. Nodes are coloured by severity.
     """
     lines = ["flowchart LR"]
     colour_for = {
@@ -312,7 +312,9 @@ def chain_to_mermaid(chain: AttackChain) -> str:
         nid = f"N{i}"
         label = (d.event.message or d.detector)[:40].replace('"', "'")
         ts = d.event.timestamp.strftime("%H:%M:%S")
-        lines.append(f'    {nid}["{ts} — {label}"]')
+        techs = d.mitre_techniques or d.event.mitre_techniques or []
+        tech_label = f" · {', '.join(techs)}" if techs else ""
+        lines.append(f'    {nid}["{ts} — {label}{tech_label}"]')
         lines.append(f'    style {nid} fill:{colour_for.get(d.event.severity, "#94a3b8")}')
     for i, (_a, b) in enumerate(pairwise(chain.detections)):
         tech = (b.mitre_techniques or b.event.mitre_techniques or [""])[0]
