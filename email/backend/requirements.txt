@@ -74,6 +74,6 @@ pytest-cov==4.1.0
 httpx==0.28.1
 
 # Code Quality
-black==26.5.1
+black==26.10.0
 flake8==6.1.0
 mypy==1.7.1
