@@ -27,6 +27,7 @@ class Settings(BaseSettings):
     GOOGLE_API_KEY: Optional[str] = None
     OPENAI_API_KEY: Optional[str] = None
     ANTHROPIC_API_KEY: Optional[str] = None
+    CLAUDE_MODEL: str = "claude-opus-5-5"
     
     # Email Configuration
     IMAP_SERVER: str = "imap.gmail.com"
