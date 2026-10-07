@@ -31,6 +31,8 @@ from email.message import Message
 from email.utils import getaddresses, parseaddr
 from typing import Iterable
 
+_LOOSE_FROM = re.compile(r"^(.*?)\s*<([^<>\s@]+@[^<>\s]+)>$")
+
 
 @dataclass
 class BECSignal:
@@ -150,6 +152,13 @@ def detect_bec(
     from_header = message.get("From", "") or ""
     reply_to = message.get("Reply-To", "") or ""
     display_name, from_addr = parseaddr(from_header)
+    if not from_addr:
+        # Phishers often send an unquoted address as the display name
+        # ("ceo@corp.com <attacker@evil.com>"), which strict parsing rejects.
+        # Recover it so the spoof is still detected.
+        loose = _LOOSE_FROM.match(from_header.strip())
+        if loose:
+            display_name, from_addr = loose.group(1).strip().strip('"'), loose.group(2)
 
     if not from_addr:
         report.signals.append(
